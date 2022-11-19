@@ -8,12 +8,10 @@ const {
   isLoggedIn,
 } = require("../controller/index.controller");
 
-router.post("/login", login);
-
-router.post("/register", register);
-
-router.post("/logout", logout);
-
-router.post("/isLogin", isLoggedIn);
+router
+  .post("/login", login)
+  .post("/register", register)
+  .post("/logout", logout)
+  .post("/isLogin", isLoggedIn);
 
 module.exports = router;
