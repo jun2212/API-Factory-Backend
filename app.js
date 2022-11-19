@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", index);
-app.use("/users", saveFunction);
+app.use("/save", saveFunction);
 
 app.use(function (req, res, next) {
   next(createError(404, "404 Not Found"));

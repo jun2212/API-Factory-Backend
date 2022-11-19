@@ -1,14 +1,9 @@
-const { v4 } = require("uuid");
 const bcyrpt = require("bcrypt");
 
 const dynamoDB = require("../utils/dynamoDbUtil");
+const uuid = require("../utils/uuidUtil");
 
 const tableName = "user";
-
-const uuid = () => {
-  const tokens = v4().split("-");
-  return tokens[2] + tokens[1] + tokens[0] + tokens[3] + tokens[4];
-};
 
 const findUserData = async (userId) => {
   const params = {
