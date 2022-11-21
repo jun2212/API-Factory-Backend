@@ -4,7 +4,7 @@ const expressSession = require("express-session");
 
 const passport = require("./middleware/localStrategy");
 const index = require("./routes/index");
-const saveFunction = require("./routes/saveFunction");
+const functionData = require("./routes/functionData");
 
 const app = express();
 
@@ -26,7 +26,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 app.use("/", index);
-app.use("/save", saveFunction);
+app.use("/functionData", functionData);
 
 app.use(function (req, res, next) {
   next(createError(404, "404 Not Found"));
