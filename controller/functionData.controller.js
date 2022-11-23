@@ -27,13 +27,16 @@ const insertFunction = catchAsync(async (req, res, next) => {
 
 const getUserFunctions = catchAsync(async (req, res, next) => {
   const { user_id } = req.user;
+
   const params = {
     TableName: tableName,
-    FilterExpression: "user_id = :id",
+    Key: { user_id: user_id },
+    IndexName: "userIdIndex",
+    KeyConditionExpression: "user_id = :id",
     ExpressionAttributeValues: { ":id": user_id },
   };
 
-  const user_functions = await dynamoDB.scan(params).promise();
+  const user_functions = await dynamoDB.query(params).promise();
 
   return res.status(200).json(user_functions);
 });
