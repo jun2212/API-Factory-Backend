@@ -21,7 +21,7 @@ app.use(
     resave: true,
     saveUninitialized: true,
     proxy: true,
-    cookie: { secure: false },
+    cookie: { secure: false, httpOnly: false },
   }),
 );
 app.use(passport.initialize());
