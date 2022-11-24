@@ -16,6 +16,7 @@ const login = catchAsync(async (req, res, next) => {
     }
 
     return req.login(user, async (error) => {
+      console.log("login", user);
       if (error) {
         return next(error);
       }
@@ -48,6 +49,7 @@ const logout = async (req, res, next) => {
 };
 
 const isLoggedIn = catchAsync(async (req, res, next) => {
+  console.log("isLoggedIn", req);
   if (req.isAuthenticated()) {
     return res.status(200).json(true);
   }
