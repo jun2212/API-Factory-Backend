@@ -17,10 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   expressSession({
     secret: process.env.SECRET,
-    sameSite: "None",
+    sameSite: "none",
     domain: "https://www.api-factory.live",
     resave: true,
     saveUninitialized: true,
+    proxy: true,
     cookie: { secure: false, httpOnly: false },
   }),
 );
