@@ -18,11 +18,9 @@ app.use(
   expressSession({
     secret: process.env.SECRET,
     sameSite: "None",
-    domain: ".api-factory.live",
-    resave: true,
-    saveUninitialized: true,
-    proxy: true,
-    cookie: { secure: false, httpOnly: false },
+    resave: false,
+    saveUninitialized: false,
+    cookie: { secure: false },
   }),
 );
 app.use(passport.initialize());
