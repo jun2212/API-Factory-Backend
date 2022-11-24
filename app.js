@@ -19,7 +19,7 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: true, httpOnly: false, sameSite: "none" },
+    cookie: { secure: true, httpOnly: true, sameSite: "none" },
   }),
 );
 app.use(passport.initialize());
