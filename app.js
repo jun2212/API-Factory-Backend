@@ -20,7 +20,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     proxy: true,
-    cookie: { secure: false, httpOnly: true, sameSite: "none" },
+    cookie: { secure: true, httpOnly: false, sameSite: "none" },
   }),
 );
 app.use(passport.initialize());
