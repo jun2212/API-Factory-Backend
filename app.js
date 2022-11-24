@@ -17,10 +17,11 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   expressSession({
     secret: process.env.SECRET,
+    sameSite: "none",
     resave: true,
     saveUninitialized: true,
     proxy: true,
-    cookie: { secure: true },
+    cookie: { secure: false },
   }),
 );
 app.use(passport.initialize());
