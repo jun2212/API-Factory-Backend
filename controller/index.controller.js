@@ -53,7 +53,7 @@ const isLoggedIn = catchAsync(async (req, res, next) => {
     "req.user",
     req.user,
     "req.isAuthenticated",
-    req.isAuthenticated,
+    req.isAuthenticated(),
   );
   if (req.isAuthenticated()) {
     return res.status(200).json(true);
