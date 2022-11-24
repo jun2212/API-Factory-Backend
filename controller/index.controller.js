@@ -2,6 +2,10 @@ const catchAsync = require("../utils/catchAsync");
 const { findUserData, registerUser } = require("../services/index.services");
 const passport = require("../middleware/localStrategy");
 
+const rootMessage = catchAsync(async (req, res, next) => {
+  res.status(200).json("root");
+});
+
 const login = catchAsync(async (req, res, next) => {
   passport.authenticate("local", (error, user, info) => {
     if (error) {
@@ -51,4 +55,4 @@ const isLoggedIn = catchAsync(async (req, res, next) => {
   return res.status(403).json(false);
 });
 
-module.exports = { login, register, logout, isLoggedIn };
+module.exports = { rootMessage, login, register, logout, isLoggedIn };
