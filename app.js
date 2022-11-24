@@ -18,7 +18,7 @@ app.use(
   expressSession({
     secret: process.env.SECRET,
     sameSite: "None",
-    domain: "https://www.api-factory.live",
+    domain: ".api-factory.live",
     resave: true,
     saveUninitialized: true,
     proxy: true,
