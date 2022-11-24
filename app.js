@@ -19,6 +19,7 @@ app.use(
     secret: process.env.SECRET,
     resave: false,
     saveUninitialized: false,
+    proxy: true,
     cookie: { secure: false, httpOnly: true, sameSite: "none" },
   }),
 );
