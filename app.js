@@ -17,10 +17,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(
   expressSession({
     secret: process.env.SECRET,
-    sameSite: "None",
     resave: false,
     saveUninitialized: false,
-    cookie: { secure: false, httpOnly: false },
+    cookie: { secure: false, httpOnly: false, sameSite: "none" },
   }),
 );
 app.use(passport.initialize());
