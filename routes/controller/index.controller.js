@@ -1,12 +1,12 @@
-const catchAsync = require("../utils/catchAsync");
+const catchAsync = require("../../utils/catchAsync");
 const { findUserData, registerUser } = require("../services/index.services");
 const passport = require("../middleware/localStrategy");
 
-const rootMessage = catchAsync(async (req, res, next) => {
+const rootMessage = catchAsync((req, res) => {
   res.status(200).json("root");
 });
 
-const login = catchAsync(async (req, res, next) => {
+const login = catchAsync((req, res, next) => {
   passport.authenticate("local", (error, user, info) => {
     if (error) {
       return next(error);
@@ -15,7 +15,7 @@ const login = catchAsync(async (req, res, next) => {
       return res.status(400).json(info.message);
     }
 
-    return req.login(user, async (error) => {
+    return req.login(user, (error) => {
       if (error) {
         return next(error);
       }
@@ -25,7 +25,7 @@ const login = catchAsync(async (req, res, next) => {
   })(req, res, next);
 });
 
-const register = catchAsync(async (req, res, next) => {
+const register = catchAsync(async (req, res) => {
   const response = await findUserData(req.body.userId);
 
   if (response.Item) {
@@ -37,7 +37,7 @@ const register = catchAsync(async (req, res, next) => {
   res.status(200).json("Register success");
 });
 
-const logout = async (req, res, next) => {
+const logout = (req, res, next) => {
   req.logout((error) => {
     if (error) {
       return next(error);
@@ -47,7 +47,7 @@ const logout = async (req, res, next) => {
   });
 };
 
-const isLoggedIn = catchAsync(async (req, res, next) => {
+const isLoggedIn = catchAsync((req, res) => {
   if (req.isAuthenticated()) {
     return res.status(200).json(true);
   }

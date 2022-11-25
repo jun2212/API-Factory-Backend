@@ -6,7 +6,7 @@ const {
   getUserFunctions,
   updateFunction,
   deleteFunction,
-} = require("../controller/functionData.controller");
+} = require("./controller/functionData.controller");
 
 router
   .get("/", getUserFunctions)

@@ -1,7 +1,7 @@
 const bcyrpt = require("bcrypt");
 
-const dynamoDB = require("../utils/dynamoDbUtil");
-const uuid = require("../utils/uuidUtil");
+const dynamoDB = require("../../utils/dynamoDbUtil");
+const uuid = require("../../utils/uuidUtil");
 
 const tableName = "user";
 

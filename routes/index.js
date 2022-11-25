@@ -7,7 +7,7 @@ const {
   register,
   logout,
   isLoggedIn,
-} = require("../controller/index.controller");
+} = require("./controller/index.controller");
 
 router
   .get("/", rootMessage)
