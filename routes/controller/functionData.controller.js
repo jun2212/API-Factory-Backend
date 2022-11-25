@@ -5,7 +5,7 @@ const uuid = require("../../utils/uuidUtil");
 const tableName = "user_function";
 
 const insertFunction = catchAsync(async (req, res, next) => {
-  const { user_id } = req.user;
+  const { user_id, unique_key } = req.user;
   const { method, name, code } = req.body;
   const uniqueKey = uuid();
 
@@ -14,6 +14,7 @@ const insertFunction = catchAsync(async (req, res, next) => {
     Item: {
       function_key: uniqueKey,
       user_id: user_id,
+      user_key: unique_key,
       method: method,
       name: name,
       code: code,
