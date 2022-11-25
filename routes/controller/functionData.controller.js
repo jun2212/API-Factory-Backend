@@ -1,6 +1,6 @@
-const catchAsync = require("../utils/catchAsync");
-const dynamoDB = require("../utils/dynamoDbUtil");
-const uuid = require("../utils/uuidUtil");
+const catchAsync = require("../../utils/catchAsync");
+const dynamoDB = require("../../utils/dynamoDbUtil");
+const uuid = require("../../utils/uuidUtil");
 
 const tableName = "user_function";
 

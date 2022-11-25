@@ -2,7 +2,7 @@ const createError = require("http-errors");
 const express = require("express");
 const expressSession = require("express-session");
 
-const passport = require("./middleware/localStrategy");
+const passport = require("./routes/middleware/localStrategy");
 const index = require("./routes/index");
 const functionData = require("./routes/functionData");
 
