@@ -21,6 +21,7 @@ describe("functionData.controller", () => {
     req = {
       user: {
         user_id: "mockID",
+        unique_key: "mockUnique_key"
       },
       body: {
         method: "mockMethod",
@@ -49,6 +50,7 @@ describe("functionData.controller", () => {
         Item: {
           function_key: uuid(),
           user_id: req.user.user_id,
+          user_key: req.user.unique_key,
           method: req.body.method,
           name: req.body.name,
           code: req.body.code,
