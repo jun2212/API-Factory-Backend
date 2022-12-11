@@ -1,6 +1,7 @@
 node_modules
 .DS_Store
 .env
+coverage
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
