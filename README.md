@@ -4,6 +4,12 @@
 
 <br/>
 
+## Deploy
+
+- [API-Factory](https://www.api-factory.live/)
+
+<br>
+
 ## Github Repository
 
 - [Frontend](https://github.com/jun2212/API-Factory-Frontend)
@@ -73,6 +79,10 @@
 - 사용자는 함수 내에서 dynamoDB와 S3를 사용 할 수 있다.
 - 사용자는 함수 내에서 서비스에서 제공하는 lodash, axios 등의 라이브러리를 사용 할 수 있다.
 - 사용자는 해당 기능들을 이용해 serverless 환경의 Backend를 구현할 수 있다.
+
+<br/>
+
+[API-Factory 사용설명](https://www.api-factory.live/guide)
 
 <br/>
 
@@ -240,8 +250,8 @@ Frontend와 Backend의 domain name이 달라서 생긴 이슈를 sameSite: "none
 ┃ ┣ 📂utils  
 ┃ ┃ ┗ 📜utils.js  
 ┃ ┣ 📜index.js  
-┃ ┗ 📜setupTests.js
-┣ 📜.eslintrc.js
+┃ ┗ 📜setupTests.js  
+┣ 📜.eslintrc.js  
 ┗ 📜.prettierrc.js
 
 </details>
