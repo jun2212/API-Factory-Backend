@@ -42,6 +42,18 @@ const getUserFunctions = catchAsync(async (req, res, next) => {
   return res.status(200).json(user_functions);
 });
 
+const getSelectedFunction = catchAsync(async (req, res, next) => {
+  const { functionKey } = req.params;
+  const params = {
+    TableName: "user_function",
+    Key: { function_key: functionKey },
+  };
+
+  const selectedFunction = await dynamoDB.get(params).promise();
+
+  return res.status(200).json(selectedFunction);
+});
+
 const updateFunction = catchAsync(async (req, res, next) => {
   const { functionKey, method, name, code } = req.body;
 
@@ -85,6 +97,7 @@ const deleteFunction = catchAsync(async (req, res, next) => {
 module.exports = {
   insertFunction,
   getUserFunctions,
+  getSelectedFunction,
   updateFunction,
   deleteFunction,
 };
